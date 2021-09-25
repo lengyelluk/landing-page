@@ -22,6 +22,7 @@ const Form2 = (props: IFormProps) => {
     event.preventDefault();
     try {
       const body = { email };
+      console.log(process.env.DATABASE_URL);
       const result = await fetch('/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application-json' },
