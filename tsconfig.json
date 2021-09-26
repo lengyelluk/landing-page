@@ -39,6 +39,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "api/index.js"
+    "src/pages/api/register/index.js"
   ]
 }
