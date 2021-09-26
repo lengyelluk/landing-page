@@ -1,7 +1,8 @@
-import prisma from '../lib/prisma';
+import prisma from '../../../../lib/prisma';
 
 export default async function handler(req, res) {
   const { email } = JSON.parse(req.body);
+  console.log('I am here');
   let result = '';
   try {
     result = await prisma.user.create({
