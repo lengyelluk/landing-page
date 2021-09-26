@@ -29,8 +29,11 @@ const Form2 = (props: IFormProps) => {
       });
       if (result.status === 201) {
         await Router.push('/success');
-      } else if (result.status === 400) {
+      } else if (result.status === 422) {
         await Router.push('/duplicate');
+      } else if (result.status === 500) {
+        //add failure page
+        console.log("page to add");
       }
     } catch (error) {
       await Router.push('/');
