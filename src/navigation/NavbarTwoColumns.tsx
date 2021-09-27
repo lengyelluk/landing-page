@@ -28,7 +28,7 @@ const NavbarTwoColumns = (props: INavbarProps) => (
         }
 
         .navbar :global(li:not(:last-child)) {
-          @apply mr-5;
+          margin-right: 1.25rem;
         }
       `}
     </style>
