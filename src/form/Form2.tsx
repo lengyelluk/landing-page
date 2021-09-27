@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import className from 'classnames';
 import Router from 'next/router';
 
 type IFormProps = {
@@ -9,12 +8,6 @@ type IFormProps = {
 };
 
 const Form2 = (props: IFormProps) => {
-  const btnClass = className({
-    btn: true,
-    'btn-xl': props.xl,
-    'btn-base': !props.xl,
-    'btn-primary': true,
-  });
 
   const [email, setEmail] = useState('');
 
