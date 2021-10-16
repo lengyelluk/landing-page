@@ -1,7 +1,3 @@
-import { ReactNode } from 'react';
-
-import { FooterCopyright } from './FooterCopyright';
-
 type ILeftAnnotationProps = {
   text: string;
   link: string;
