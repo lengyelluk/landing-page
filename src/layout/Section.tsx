@@ -4,7 +4,7 @@ type ISectionProps = {
   title?: string;
   description?: string;
   yPadding?: string;
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 const Section = (props: ISectionProps) => (
@@ -24,7 +24,7 @@ const Section = (props: ISectionProps) => (
       </div>
     )}
 
-    {props.children}
+  {props.children}
   </div>
 );
 

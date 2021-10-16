@@ -17,7 +17,10 @@ const Presale = () => (
       hodnotu vašich peňazí už za:"
       yPadding="pb-8"
     />
-    <Countdown />
+    <Countdown 
+      isPlaying={true}
+      size={100}
+      strokeWidth={6} />
   </>
 );
 

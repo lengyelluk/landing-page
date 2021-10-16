@@ -1,17 +1,19 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 const minuteSeconds = 60;
 const hourSeconds = 3600;
 const daySeconds = 86400;
 
-const timerProps = {
-  isPlaying: true,
-  size: 100,
-  strokeWidth: 6
+type ICountdownProps = {
+  isPlaying?: boolean;
+  size?: number;
+  strokeWidth?: number;
+  children?: ReactNode;
 };
 
-const renderTime = (dimension, time) => {
+
+const renderTime = (dimension: string, time: number) => {
   return (
     <div className="time-wrapper">
       <div className="time">{time}</div>
@@ -20,12 +22,12 @@ const renderTime = (dimension, time) => {
   );
 };
 
-const getTimeSeconds = (time) => (minuteSeconds - time) | 0;
-const getTimeMinutes = (time) => ((time % hourSeconds) / minuteSeconds) | 0;
-const getTimeHours = (time) => ((time % daySeconds) / hourSeconds) | 0;
-const getTimeDays = (time) => (time / daySeconds) | 0;
+const getTimeSeconds:Function = (time: number) => (minuteSeconds - time) | 0;
+const getTimeMinutes:Function = (time: number) => ((time % hourSeconds) / minuteSeconds) | 0;
+const getTimeHours:Function = (time: number) => ((time % daySeconds) / hourSeconds) | 0;
+const getTimeDays:Function = (time: number) => (time / daySeconds) | 0;
 
-const Countdown = () => {
+const Countdown = (props: ICountdownProps) => {
   const stratTime = Date.now() / 1000; // use UNIX timestamp in seconds
   const endTime = stratTime + 2592000; // use UNIX timestamp in seconds
 
@@ -33,56 +35,56 @@ const Countdown = () => {
   const days = Math.ceil(remainingTime / daySeconds);
   const daysDuration = days * daySeconds;
 
+  const color1: string = '#4AA8D5';
+  const color2: string = '#337A9B';
+  const color3: string = '#3884A7';
+  
   return (
     <div className="flex flex-row justify-center space-x-3">
       <CountdownCircleTimer
-        className="flex-1"
-        {...timerProps}
-        colors={[["#4AA8D5"]]}
+        {...props}
+        colors={color1}
         duration={daysDuration}
         initialRemainingTime={remainingTime}
       >
-        {({ elapsedTime }) =>
-          renderTime("dní", getTimeDays(daysDuration - elapsedTime))
+        {({ elapsedTime }) => 
+          renderTime("dní", getTimeDays(daysDuration - elapsedTime!))
         }
       </CountdownCircleTimer>
       <CountdownCircleTimer
-        {...timerProps}
-        className="flex-1"
-        colors={[["#337A9B"]]}
+        {...props}
+        colors={color2}
         duration={daySeconds}
         initialRemainingTime={remainingTime % daySeconds}
-        onComplete={(totalElapsedTime) => [
-          remainingTime - totalElapsedTime > hourSeconds
+        onComplete={(totalElapsedTime:number) => [
+          remainingTime - totalElapsedTime > hourSeconds, 1
         ]}
       >
         {({ elapsedTime }) =>
-          renderTime("hodín", getTimeHours(daySeconds - elapsedTime))
+          renderTime("hodín", getTimeHours(daySeconds - elapsedTime!))
         }
       </CountdownCircleTimer>
       <CountdownCircleTimer
-        {...timerProps}
-        className="flex-1"
-        colors={[["#3884A7"]]}
+        {...props}
+        colors={color3}
         duration={hourSeconds}
         initialRemainingTime={remainingTime % hourSeconds}
-        onComplete={(totalElapsedTime) => [
-          remainingTime - totalElapsedTime > minuteSeconds
+        onComplete={(totalElapsedTime:number) => [
+          remainingTime - totalElapsedTime > minuteSeconds, 1
         ]}
       >
         {({ elapsedTime }) =>
-          renderTime("minút", getTimeMinutes(hourSeconds - elapsedTime))
+          renderTime("minút", getTimeMinutes(hourSeconds - elapsedTime!))
         }
       </CountdownCircleTimer>
       <CountdownCircleTimer
 
-        {...timerProps}
-        className="flex-1"
-        colors={[["#3986A9"]]}
+        {...props}
+        colors={color2}
         duration={minuteSeconds}
         initialRemainingTime={remainingTime % minuteSeconds}
-        onComplete={(totalElapsedTime) => [
-          remainingTime - totalElapsedTime > 0
+        onComplete={(totalElapsedTime:number) => [
+          remainingTime - totalElapsedTime > 0, 1
         ]}
       >
         {({ elapsedTime }) =>
