@@ -6,8 +6,8 @@ const Banner = () => {
   return (
     <Section>
       <CTABanner
-        title="Čoskoro prvé kolo predaja."
-        subtitle="Získaj bližšie info ako prvý."
+        title="Predpredaj začína už coškoro."
+        subtitle="Registruj sa a získaj možnosť investovať do slovenskej kryptomeny."
         form={<Form2 placeholder="Email" />}
       />
     </Section>
