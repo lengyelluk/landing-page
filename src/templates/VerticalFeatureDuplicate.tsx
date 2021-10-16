@@ -4,7 +4,7 @@ import { Section } from '../layout/Section';
 const VerticalFeatureDuplicate = () => (
   <Section
     title="Tvoj email už máme!"
-    description="Hneď ako začne predaj Slovenskej digitálnej koruny, dostaneš daľšie informácie. Ďakujeme!"
+    description="Hneď ako začne predpredaj Slovenskej digitálnej koruny, dostaneš daľšie informácie. Ďakujeme!"
   >
     <VerticalFeatureRow
       title="Sleduj náš Facebook"
