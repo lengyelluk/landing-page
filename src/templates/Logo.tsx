@@ -26,13 +26,14 @@ type ILogoProps = {
 
 const Logo = (props: ILogoProps) => {
   const size = props.xl ? '150' : '35';
+  const height = props.xl ? '100' : '35';
   const fontStyle = props.xl
     ? 'font-semibold text-3xl'
     : 'font-semibold text-xl';
 
   return (
     <span className={`text-gray-900 inline-flex items-center ${fontStyle}`}>
-      <svg width={size} height="100" viewBox="0 0 200 200">
+      <svg width={size} height={height} viewBox="0 0 200 200">
       <path fill="none" stroke="#4AA8D5" strokeWidth="12" d="M100,100 C200,0 200,200 100,100 C0,0 0,200 100,100z" />
 </svg>
       {AppConfig.site_name}

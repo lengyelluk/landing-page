@@ -5,7 +5,7 @@ import { Logo } from './Logo';
 
 const Footer = () => (
   <Background color="bg-gray-100">
-    <Section>
+    <Section yPadding="pt-2">
       <CenteredFooter logo={<Logo />}></CenteredFooter>
     </Section>
   </Background>
