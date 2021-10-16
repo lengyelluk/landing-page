@@ -1,5 +1,4 @@
 import { LeftAnnotation } from '../annotation/LeftAnnotation';
-import { Background } from '../background/Background';
 import { Section } from '../layout/Section';
 
 const Annotation = () => (
