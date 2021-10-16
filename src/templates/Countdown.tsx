@@ -38,9 +38,9 @@ const Countdown = (props: ICountdownProps) => {
   const color1: string = '#4AA8D5';
   const color2: string = '#337A9B';
   const color3: string = '#3884A7';
-  
+  //className="flex sm:flex-row flex-col sm:justify-center space-x-3"
   return (
-    <div className="flex flex-row justify-center space-x-3">
+    <div className="flex flex-wrap justify-center space-x-3">
       <CountdownCircleTimer
         {...props}
         colors={color1}

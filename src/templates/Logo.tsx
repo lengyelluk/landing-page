@@ -32,7 +32,7 @@ const Logo = (props: ILogoProps) => {
 
   return (
     <span className={`text-gray-900 inline-flex items-center ${fontStyle}`}>
-      <svg height={size} viewBox="0 0 200 200">
+      <svg width={size} height="100" viewBox="0 0 200 200">
       <path fill="none" stroke="#4AA8D5" strokeWidth="12" d="M100,100 C200,0 200,200 100,100 C0,0 0,200 100,100z" />
 </svg>
       {AppConfig.site_name}
